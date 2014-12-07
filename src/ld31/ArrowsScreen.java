@@ -13,6 +13,7 @@ public class ArrowsScreen extends SubScreen{
 	
 	public ArrowsScreen(double X, double Y, double Width, double Height, double Zoom) {
 		super(X, Y, Width, Height, Zoom);
+		bgColor = 0xff000000;
 		arrows = new RedSprite(0, 0, 0, 0);
 		arrows.loadImage(RedImage.loadImage("/ld31/data/buttonsArrows.png"), 48, 36);
 		arrows.addAnimation(new int[]{0,1,0,2}, 0);

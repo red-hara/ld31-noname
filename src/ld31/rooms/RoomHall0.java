@@ -54,6 +54,7 @@ public class RoomHall0 extends Room {
 			}
 			if (RedG.overlap(FullState.proto, lockerButton) && RedG.keys.justPressed('C') && lockerButton.visible) {
 				FullState.proto.canAttack = true;
+				FullState.console.text.text = "Subject\nfound\nweapon";
 				RedSound sound = new RedSound("/ld31/data/door.wav");
 				sound.start();
 			}
