@@ -21,7 +21,7 @@ import ld31.rooms.RoomObservation;
  */
 public class FullState extends RedGroup {
 
-	public static FullScreen fullScreen = new FullScreen();
+	public static FullScreen fullScreen;
 	public Updater updater = new Updater();
 
 	public static Proto proto;
@@ -68,6 +68,8 @@ public class FullState extends RedGroup {
 
 	public FullState() {
 		super();
+		fullScreen= new FullScreen();
+		
 		proto = new Proto(16, 33);
 
 		roomCell = new RoomCell();
