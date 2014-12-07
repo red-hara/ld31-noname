@@ -27,7 +27,7 @@ public class Guard extends RedSprite {
 			if (action != DEAD) {
 				action = WALK;
 				destinationIndex = (destinationIndex + 1) % destinations.length;
-				if( Math.abs(x + width / 2 - destinations[destinationIndex]) < 2 ) {
+				if( Math.abs(x + width / 2 - destinations[destinationIndex]) < 4 ) {
 					action = STAY;
 				}
 			}
@@ -69,7 +69,7 @@ public class Guard extends RedSprite {
 				break;
 			}
 			case WALK: {
-				if (destinations[destinationIndex] < x + width / 2) {
+				if (destinations[destinationIndex] < x + width / 4) {
 					velocity.x = -30;
 					facing = RedG.LEFT;
 					playAnimation(1, 0.1);
@@ -80,7 +80,7 @@ public class Guard extends RedSprite {
 					playAnimation(0, 0.1);
 					offset.x = -6;
 				}
-				if (Math.abs(x + width / 2 - destinations[destinationIndex]) < 2) {
+				if (Math.abs(x + width / 2 - destinations[destinationIndex]) < 4) {
 					velocity.x = 0;
 					action = STAY;
 					timer.start(3, 1);
