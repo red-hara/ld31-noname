@@ -30,7 +30,7 @@ public class RoomHall3 extends Room {
 		add(doorButton0);
 		add(doorButton1);
 
-		Guard guard = new Guard(112, 33, this);
+		Guard guard = new Guard(120, 33, this);
 		guard.destinations = new int[]{106};
 		guards.add(guard);
 

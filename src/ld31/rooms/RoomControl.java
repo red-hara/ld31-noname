@@ -39,7 +39,7 @@ public class RoomControl extends Room {
 	
 	public class ScreenGuard extends Guard {
 		public ScreenGuard(Room RoomAround) {
-			super(26, 33, RoomAround);
+			super(30, 33, RoomAround);
 			destinations = new int[]{22};
 		}
 		

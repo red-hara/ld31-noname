@@ -27,7 +27,8 @@ public class Guard extends RedSprite {
 			if (action != DEAD) {
 				action = WALK;
 				destinationIndex = (destinationIndex + 1) % destinations.length;
-				if( Math.abs(x + width / 2 - destinations[destinationIndex]) < 4 ) {
+				if( Math.abs(x + width / 2 - destinations[destinationIndex]) < 2 ) {
+					timer.start(3, 1);
 					action = STAY;
 				}
 			}
@@ -69,7 +70,7 @@ public class Guard extends RedSprite {
 				break;
 			}
 			case WALK: {
-				if (destinations[destinationIndex] < x + width / 4) {
+				if (destinations[destinationIndex] < x + width / 2) {
 					velocity.x = -30;
 					facing = RedG.LEFT;
 					playAnimation(1, 0.1);
@@ -80,7 +81,7 @@ public class Guard extends RedSprite {
 					playAnimation(0, 0.1);
 					offset.x = -6;
 				}
-				if (Math.abs(x + width / 2 - destinations[destinationIndex]) < 4) {
+				if (Math.abs(x + width / 2 - destinations[destinationIndex]) < 2) {
 					velocity.x = 0;
 					action = STAY;
 					timer.start(3, 1);
@@ -109,7 +110,7 @@ public class Guard extends RedSprite {
 					&& ((FullState.proto.canBeSeen
 					&& ((facing == RedG.LEFT && FullState.proto.x + FullState.proto.width / 2 < x + width / 2)
 					|| (facing == RedG.RIGHT && FullState.proto.x + FullState.proto.width / 2 > x + width / 2))
-					&& Math.abs(FullState.proto.x + FullState.proto.width / 2 - x - width / 2) < 48)
+					&& Math.abs(FullState.proto.x + FullState.proto.width / 2 - x - width / 2) < 32)
 					|| (RedG.overlap(this, FullState.proto)))) {
 				action = FIRE;
 				if (facing == RedG.LEFT) {
